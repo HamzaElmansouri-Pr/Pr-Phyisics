@@ -209,35 +209,12 @@ export default function Home() {
             <p>Toutes les fiches, vidéos et séries d'exercices sont accessibles librement, sans inscription.</p>
             <div className="cta-actions">
               <Link href="/exercices" className="btn btn-primary">Explorer la bibliothèque</Link>
-              <Link href="/#contact" className="btn btn-outline">Me contacter</Link>
+              <Link href="/contact" className="btn btn-outline">Me contacter</Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="contact">
-        <div className="wrap">
-          <div className="section-head">
-            <div className="eyebrow">Contact</div>
-            <h2>Nos centres de soutien</h2>
-            <p>Un message ou un appel suffit pour réserver une place dans l'un de nos centres.</p>
-          </div>
-          <div className="contact-grid">
-            <div className="center-card">
-              <h3>Témara — Av. Mohammed V</h3>
-              <p className="hours">Lundi – Dimanche, 10h00 – 22h30</p>
-              <p>Immeuble 242, 3ème étage, Témara</p>
-              <p>05 37 58 74 84</p>
-            </div>
-            <div className="center-card">
-              <h3>Rabat — Agdal</h3>
-              <p className="hours">Lundi – Dimanche, 11h00 – 22h00</p>
-              <p>Angle Bd de France et rue Malouiya, Immeuble 66</p>
-              <p>05 30 16 34 00</p>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

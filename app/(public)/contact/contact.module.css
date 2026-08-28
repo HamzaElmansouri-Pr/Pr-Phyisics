@@ -1,0 +1,202 @@
+.contactWrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 80px 32px;
+}
+
+.contactHeader {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 60px;
+}
+
+.contactHeader .eyebrow {
+  color: var(--blue);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.contactHeader .eyebrow::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 0 4px var(--blue-soft);
+}
+
+.contactHeader h1 {
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+
+.contactHeader p {
+  color: var(--text-2);
+  font-size: 16.5px;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contactCard {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.contactCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--blue);
+}
+
+.contactCard::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: var(--blue);
+  opacity: 0.03;
+}
+
+.contactCard.whatsappCard::after {
+  background: #25D366;
+}
+
+.iconWrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: var(--blue-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: var(--blue);
+}
+
+.whatsappCard .iconWrap {
+  background: rgba(37, 211, 102, 0.15);
+  color: #25D366;
+}
+
+.contactCard h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.contactCard p {
+  color: var(--text-2);
+  font-size: 15px;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.linkBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.whatsappCard .linkBtn {
+  background: #25D366;
+  color: #fff;
+  border-color: #25D366;
+}
+
+.whatsappCard .linkBtn:hover {
+  background: #20BA56;
+  border-color: #20BA56;
+}
+
+.emailCard .linkBtn:hover {
+  background: var(--blue);
+  color: #04101f;
+  border-color: var(--blue);
+}
+
+.centersSection {
+  margin-top: 80px;
+  padding-top: 60px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.centersTitle {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.centersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.centerCard {
+  background: var(--surface-2);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.centerCard h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--blue);
+}
+
+.centerCard .hours {
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  color: var(--text-2);
+  margin-bottom: 16px;
+  display: inline-block;
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
+}
+
+.centerCard p {
+  font-size: 14px;
+  color: var(--text-2);
+  margin-bottom: 8px;
+}
+
+.centerCard p:last-child {
+  margin-bottom: 0;
+  color: var(--text);
+  font-weight: 500;
+}

@@ -45,10 +45,10 @@ export default function Header() {
           <Link href="/#prof" className={pathname === '/#prof' ? 'active' : ''}>Le professeur</Link>
           <Link href="/exercices" className={pathname === '/exercices' ? 'active' : ''}>Cours & Exercices</Link>
           <Link href="/livres" className={pathname === '/livres' ? 'active' : ''}>Livres</Link>
-          <Link href="/#contact" className={pathname === '/#contact' ? 'active' : ''}>Contact</Link>
+          <Link href="/contact" className={pathname === '/contact' ? 'active' : ''}>Contact</Link>
         </nav>
         <div className="nav-cta">
-          <Link href="/#contact" className="btn btn-primary">Me contacter</Link>
+          <Link href="/contact" className="btn btn-primary">Me contacter</Link>
         </div>
       </div>
     </header>
