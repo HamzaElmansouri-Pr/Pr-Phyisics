@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="foot-brand">
             <div className="logo">
               <div className="logo-mark">PC</div>
-              Pr. El Amrani
+              Pr. EL Mansouri Anass
             </div>
             <p>
               Cours et exercices de physique-chimie pour les lycéens marocains,
