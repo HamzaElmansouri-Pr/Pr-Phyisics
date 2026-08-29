@@ -8,7 +8,7 @@ export default function PublicLayout({
 }) {
   return (
     <>
-      <svg className="bg-wave" viewBox="0 0 1440 900" preserveAspectRatio="none">
+      {/* <svg className="bg-wave" viewBox="0 0 1440 900" preserveAspectRatio="none">
         <path
           d="M0,300 C 200,250 300,350 500,300 S 800,200 1000,280 S 1300,350 1440,300"
           fill="none"
@@ -21,7 +21,7 @@ export default function PublicLayout({
           stroke="#132038"
           strokeWidth="1.5"
         />
-      </svg>
+      </svg> */}
 
       <Header />
       <main style={{ position: 'relative', zIndex: 1 }}>{children}</main>

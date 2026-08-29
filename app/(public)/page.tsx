@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -37,7 +38,7 @@ export default function Home() {
           </div>
           <div className="cards-stage">
             <div className="grid-bg"></div>
-            <div className="watermark">PHYSIQUE</div>
+            <div className="watermark">PROF. ANASS</div>
 
             <div className="cards-row-top">
               <div className="hero-card card-mech">
@@ -92,30 +93,33 @@ export default function Home() {
 
       <section id="prof">
         <div className="wrap prof-grid">
-          <div className="photo-frame">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
-              <circle cx="12" cy="8" r="3.5" />
-              <path d="M4.5 20c1.5-4 4.2-6 7.5-6s6 2 7.5 6" />
-            </svg>
-            <span>Photo du professeur<br />(à intégrer ici)</span>
+          <div className="photo-frame" style={{ padding: 0, overflow: 'hidden' }}>
+            <Image
+              src="/prof.jpeg"
+              alt="Pr. Anass El Mansouri"
+              width={400}
+              height={533}
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
           </div>
           <div className="prof-copy">
-            <div className="eyebrow">Le professeur</div>
+            <div className="eyebrow">À propos du Prof Anas</div>
             <h2>Enseignant de physique-chimie depuis 12 ans</h2>
             <p>
-              Diplômé en physique appliquée, j'accompagne des lycéens marocains du
-              tronc commun au bac dans la compréhension durable de la matière —
-              pas seulement la mémorisation des formules.
+              Passionné par les sciences et par la transmission du savoir, Le Prof Anas est titulaire d’une licence en chimie des procédés et analyses physico-chimiques. Il est également diplômé d’un centre de formation aux métiers de l’éducation et de l’enseignement.
             </p>
             <p>
-              Je conçois moi-même chaque fiche, chaque vidéo et chaque série
-              d'exercices publiée sur ce site, à partir des programmes officiels
-              et des sujets d'examens les plus récents.
+              Son parcours a été enrichi par plusieurs stages pratiques dans le domaine des analyses chimiques, lui permettant d’allier connaissances scientifiques, expérience de laboratoire et compétences pédagogiques.
+            </p>
+            <p>
+              Avec plus de 12 années d’expérience dans l’enseignement, Le Prof Anas a développé une méthode claire, progressive et adaptée aux besoins de chaque élève. Profondément passionné par la physique-chimie, il cherche à rendre les notions complexes plus simples, plus concrètes et plus accessibles.
+            </p>
+            <p>
+              Convaincu que l’enseignement doit constamment évoluer, il refuse de se contenter des méthodes classiques. Il recherche toujours de nouvelles approches, crée des supports pédagogiques modernes et développe des méthodes innovantes afin d’aider ses élèves à mieux comprendre, à progresser et à réussir.
             </p>
             <div className="prof-creds">
-              <div className="cred-row"><span className="ic">🎓</span>Master en physique appliquée</div>
+              <div className="cred-row"><span className="ic">🎓</span>Licence en chimie des procédés et analyses physico-chimiques</div>
               <div className="cred-row"><span className="ic">🏫</span>12 ans d'enseignement au lycée</div>
-              <div className="cred-row"><span className="ic">📍</span>Centres de soutien à Rabat et Témara</div>
             </div>
           </div>
         </div>
@@ -191,7 +195,7 @@ export default function Home() {
             </div>
             <div className="testi-card">
               <div className="stars">★★★★★</div>
-              <p>"Le prof explique les ondes mécaniques d'une façon que je n'avais jamais comprise avant. Les vidéos sont un vrai plus."</p>
+              <p>"Le prof explique les ondes mécaniques d'une façon que je n'avais jamais comprise avant. Les livres et cours sont un vrai plus."</p>
               <div className="testi-who">
                 <div className="av"></div>
                 <div><b>Youssef K.</b><span>1ère année Bac</span></div>

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,9 +49,10 @@ export default function Header() {
           <Link href="/controles" className={pathname === '/controles' ? 'active' : ''}>Contrôles</Link>
           <Link href="/examens" className={pathname === '/examens' ? 'active' : ''}>Examens</Link>
           <Link href="/livres" className={pathname === '/livres' ? 'active' : ''}>Acheter mes livres</Link>
-          <Link href="/contact" className={pathname === '/contact' ? 'active' : ''}>Contact</Link>
+
         </nav>
         <div className="nav-cta">
+          <ThemeToggle />
           <Link href="/contact" className="btn btn-primary">Me contacter</Link>
         </div>
       </div>
