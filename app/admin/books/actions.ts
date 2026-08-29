@@ -16,6 +16,8 @@ export async function createBookAction(formData: FormData) {
   const priceStr = formData.get('price') as string;
   const price = priceStr ? parseFloat(priceStr) : null;
   const is_available = formData.get('is_available') === 'on';
+  const extract_title = formData.get('extract_title') as string || "Voir l'extrait";
+  const extract_link = formData.get('extract_link') as string;
   const file = formData.get('cover_image') as File | null;
 
   if (!file || file.size === 0) {
@@ -53,7 +55,7 @@ export async function createBookAction(formData: FormData) {
   const cover_image_url = publicUrlData.publicUrl;
 
   // 4. Validate text fields via Zod
-  const parsed = bookSchema.safeParse({ title, slug, description, whatsapp_message, cover_image_url, price, is_available });
+  const parsed = bookSchema.safeParse({ title, slug, description, whatsapp_message, cover_image_url, price, is_available, extract_title, extract_link });
   if (!parsed.success) {
     return { error: (parsed.error as any).errors[0].message };
   }
@@ -79,6 +81,8 @@ export async function updateBookAction(id: string, formData: FormData) {
   const priceStr = formData.get('price') as string;
   const price = priceStr ? parseFloat(priceStr) : null;
   const is_available = formData.get('is_available') === 'on';
+  const extract_title = formData.get('extract_title') as string || "Voir l'extrait";
+  const extract_link = formData.get('extract_link') as string;
   const file = formData.get('cover_image') as File | null;
   const existing_cover_url = formData.get('existing_cover_url') as string;
 
@@ -104,7 +108,7 @@ export async function updateBookAction(id: string, formData: FormData) {
     cover_image_url = publicUrlData.publicUrl;
   }
 
-  const parsed = bookSchema.safeParse({ title, slug, description, whatsapp_message, cover_image_url, price, is_available });
+  const parsed = bookSchema.safeParse({ title, slug, description, whatsapp_message, cover_image_url, price, is_available, extract_title, extract_link });
   if (!parsed.success) return { error: (parsed.error as any).errors[0].message };
 
   try {

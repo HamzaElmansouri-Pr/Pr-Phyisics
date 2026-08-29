@@ -42,6 +42,8 @@ export const bookSchema = z.object({
   whatsapp_message: z.string().optional().nullable(),
   price: z.number().optional().nullable(),
   is_available: z.boolean().default(true).optional(),
+  extract_title: z.string().optional().nullable(),
+  extract_link: z.string().url('URL extrait invalide').optional().nullable().or(z.literal('')),
 });
 
 export const bookImageSchema = z.object({

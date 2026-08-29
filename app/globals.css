@@ -113,9 +113,10 @@
 
       .nav-links {
         display: flex;
-        gap: 36px;
-        font-size: 14px;
+        gap: 20px;
+        font-size: 13px;
         color: var(--text-2);
+        white-space: nowrap;
       }
 
       .nav-links a:hover {

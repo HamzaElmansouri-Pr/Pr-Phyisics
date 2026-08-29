@@ -13,6 +13,8 @@ export default function BookForm({ books }: { books: any[] }) {
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState<string>('');
   const [whatsappMsg, setWhatsappMsg] = useState('');
+  const [extractTitle, setExtractTitle] = useState("Voir l'extrait");
+  const [extractLink, setExtractLink] = useState('');
   const [existingCoverUrl, setExistingCoverUrl] = useState('');
   const [isAvailable, setIsAvailable] = useState(true);
   const [slugManuallyEdited, setSlugManuallyEdited] = useState(false);
@@ -56,6 +58,8 @@ export default function BookForm({ books }: { books: any[] }) {
     
     const defaultMsg = `Bonjour, je souhaite commander le livre "${book.title}".`;
     setWhatsappMsg(book.whatsapp_message || defaultMsg);
+    setExtractTitle(book.extract_title || "Voir l'extrait");
+    setExtractLink(book.extract_link || '');
     setExistingCoverUrl(book.cover_image_url);
     setIsAvailable(book.is_available ?? true);
     setSlugManuallyEdited(false);
@@ -70,6 +74,8 @@ export default function BookForm({ books }: { books: any[] }) {
     setDescription('');
     setPrice('');
     setWhatsappMsg('');
+    setExtractTitle("Voir l'extrait");
+    setExtractLink('');
     setExistingCoverUrl('');
     setIsAvailable(true);
     setSlugManuallyEdited(false);
@@ -131,6 +137,16 @@ export default function BookForm({ books }: { books: any[] }) {
           <div>
             <label className="admin-label">Message WhatsApp (Optionnel)</label>
             <input name="whatsapp_message" value={whatsappMsg} onChange={handleWhatsappChange} className="admin-input" placeholder="Bonjour, je souhaite commander..." />
+          </div>
+        </div>
+        <div className="admin-form-row">
+          <div>
+            <label className="admin-label">Titre de l'extrait</label>
+            <input name="extract_title" value={extractTitle} onChange={(e) => setExtractTitle(e.target.value)} className="admin-input" placeholder="Voir l'extrait" />
+          </div>
+          <div>
+            <label className="admin-label">Lien de l'extrait (Drive)</label>
+            <input name="extract_link" type="url" value={extractLink} onChange={(e) => setExtractLink(e.target.value)} className="admin-input" placeholder="https://drive.google.com/..." />
           </div>
         </div>
         
