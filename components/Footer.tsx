@@ -23,15 +23,16 @@ export default function Footer() {
           </div>
           <div className="foot-col">
             <b>Ressources</b>
-            <Link href="/exercices">Cours vidéo</Link>
-            <Link href="/exercices">Exercices PDF</Link>
+            <Link href="/exercices">Exercices</Link>
+            <Link href="/resumes">Résumés de cours</Link>
+            <Link href="/controles">Contrôles</Link>
+            <Link href="/examens">Examens</Link>
             <Link href="/livres">Livres</Link>
           </div>
           <div className="foot-col">
             <b>Contact</b>
-            <a href="mailto:contact@profphysique.ma">contact@profphysique.ma</a>
-            <a href="tel:+212600000000">+212 6 00 00 00 00</a>
-            <span>Rabat, Maroc</span>
+            <a href="mailto:Profanaselmansouri@gmail.com">Profanaselmansouri@gmail.com</a>
+            <span>Taza, Maroc</span>
           </div>
         </div>
         <div className="foot-bottom">

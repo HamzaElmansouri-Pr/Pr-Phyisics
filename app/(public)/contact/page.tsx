@@ -47,8 +47,8 @@ export default function ContactPage() {
           </div>
           <h2>Email</h2>
           <p>Vous préférez l'email ? Écrivez-nous à notre adresse professionnelle et nous vous répondrons dans les plus brefs délais.</p>
-          <a href="mailto:[EMAIL_ADDRESS]" className={styles.linkBtn}>
-            [EMAIL_ADDRESS]
+          <a href="mailto:Profanaselmansouri@gmail.com" className={styles.linkBtn}>
+            Profanaselmansouri@gmail.com
           </a>
         </div>
       </div>
