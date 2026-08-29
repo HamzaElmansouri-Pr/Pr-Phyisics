@@ -6,6 +6,12 @@ import { redirect } from 'next/navigation';
 export async function login(formData: FormData) {
   const email = formData.get('email') as string;
   const password = formData.get('password') as string;
+
+  // Basic rate limiting / timing attack mitigation: 
+  // Add a random delay between 500ms and 1500ms before processing the login
+  const delay = Math.floor(Math.random() * 1000) + 500;
+  await new Promise(resolve => setTimeout(resolve, delay));
+
   const supabase = await createClient();
 
   const { error } = await supabase.auth.signInWithPassword({

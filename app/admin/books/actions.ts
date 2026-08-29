@@ -24,13 +24,13 @@ export async function createBookAction(formData: FormData) {
     return { error: 'Veuillez sélectionner une image de couverture.' };
   }
 
-  // 1. Validate file (MIME type magic numbers and size)
-  const isValid = await validateImageFile(file, 2); // 2MB max
-  if (!isValid) {
+  // 1. Validate file (MIME type magic numbers and size) — returns detected MIME type
+  const detectedMime = await validateImageFile(file, 2); // 2MB max
+  if (!detectedMime) {
     return { error: 'Fichier invalide. Seules les images (JPEG, PNG, GIF, WEBP) de moins de 2 Mo sont autorisées.' };
   }
 
-  // 2. Upload file to Supabase Storage
+  // 2. Upload file to Supabase Storage (use server-detected MIME, not client-provided file.type)
   const fileExt = file.name.split('.').pop()?.toLowerCase() || 'jpg';
   const fileName = `${crypto.randomUUID()}.${fileExt}`;
   
@@ -41,7 +41,7 @@ export async function createBookAction(formData: FormData) {
   const { data: uploadData, error: uploadError } = await supabase.storage
     .from('images')
     .upload(fileName, buffer, {
-      contentType: file.type || 'image/jpeg',
+      contentType: detectedMime,
       cacheControl: '3600',
       upsert: false,
     });
@@ -89,8 +89,8 @@ export async function updateBookAction(id: string, formData: FormData) {
   let cover_image_url = existing_cover_url;
 
   if (file && file.size > 0) {
-    const isValid = await validateImageFile(file, 2);
-    if (!isValid) return { error: 'Fichier invalide. JPEG/PNG/GIF/WEBP < 2Mo' };
+    const detectedMime = await validateImageFile(file, 2);
+    if (!detectedMime) return { error: 'Fichier invalide. JPEG/PNG/GIF/WEBP < 2Mo' };
 
     const fileExt = file.name.split('.').pop()?.toLowerCase() || 'jpg';
     const fileName = `${crypto.randomUUID()}.${fileExt}`;
@@ -100,7 +100,7 @@ export async function updateBookAction(id: string, formData: FormData) {
 
     const { error: uploadError } = await supabase.storage
       .from('images')
-      .upload(fileName, buffer, { contentType: file.type || 'image/jpeg' });
+      .upload(fileName, buffer, { contentType: detectedMime });
 
     if (uploadError) return { error: `Erreur d'upload: ${uploadError.message}` };
 
