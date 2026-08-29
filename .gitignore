@@ -37,5 +37,6 @@ next-env.d.ts
 
 # unused / old files
 plan.md
+SECURITY.md
 index.html
 db

@@ -39,7 +39,14 @@ export default function LoginForm() {
               <input name="email" type="email" required className="admin-input" placeholder="votre@email.com" />
             </div>
             <div>
-              <label className="admin-label">Mot de passe</label>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+                <label className="admin-label">Mot de passe</label>
+                {/* 
+                <a href="/admin/login/forgot-password" style={{ fontSize: '12px', color: 'var(--blue)', textDecoration: 'none' }}>
+                  Mot de passe oublié ?
+                </a>
+                */}
+              </div>
               <input name="password" type="password" required className="admin-input" placeholder="••••••••" />
             </div>
             <button type="submit" className="btn btn-primary">Se connecter</button>
