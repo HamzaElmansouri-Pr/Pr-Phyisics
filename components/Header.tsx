@@ -20,8 +20,8 @@ export default function Header() {
           <div className="logo-mark">PC</div>
           Pr.Anass El Mansouri
         </Link>
-        <button 
-          className="menu-toggle" 
+        <button
+          className="menu-toggle"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -43,8 +43,11 @@ export default function Header() {
         <nav className={`nav-links ${isOpen ? 'open' : ''}`}>
           <Link href="/" className={pathname === '/' ? 'active' : ''}>Accueil</Link>
           <Link href="/#prof" className={pathname === '/#prof' ? 'active' : ''}>Le professeur</Link>
-          <Link href="/exercices" className={pathname === '/exercices' ? 'active' : ''}>Cours & Exercices</Link>
-          <Link href="/livres" className={pathname === '/livres' ? 'active' : ''}>Livres</Link>
+          <Link href="/exercices" className={pathname === '/exercices' ? 'active' : ''}>Exercices</Link>
+          <Link href="/resumes" className={pathname === '/resumes' ? 'active' : ''}>Résumés de cours</Link>
+          <Link href="/controles" className={pathname === '/controles' ? 'active' : ''}>Contrôles</Link>
+          <Link href="/examens" className={pathname === '/examens' ? 'active' : ''}>Examens</Link>
+          <Link href="/livres" className={pathname === '/livres' ? 'active' : ''}>Acheter mes livres</Link>
           <Link href="/contact" className={pathname === '/contact' ? 'active' : ''}>Contact</Link>
         </nav>
         <div className="nav-cta">
