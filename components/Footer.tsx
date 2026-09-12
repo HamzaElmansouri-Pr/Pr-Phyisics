@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="foot-grid">
           <div className="foot-brand">
             <Link href="/" className="logo">
-              <div className="logo-mark">
+              <div className="">
                 <Image src="/logo.png" alt="Pr. Anass El Mansouri Logo" width={32} height={32} style={{ borderRadius: '50%' }} />
               </div>
               <div className="logo-text">
